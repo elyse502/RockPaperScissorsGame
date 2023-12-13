@@ -1,0 +1,543 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=Dancing+Script&family=Libre+Baskerville:wght@400;700&family=Lobster&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #141539;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.parent {
+  width: 100%;
+  height: 750px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.parent .head {
+  margin-top: 20px;
+  max-width: 650px;
+  height: 150px;
+  margin-right: auto;
+  margin-left: auto;
+  border: 3px solid #606e85;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 760px) {
+  .parent .head {
+    margin: 20px 10px;
+     width:100%;
+  }
+}
+@media (min-width: 761px) {
+  .parent .head {
+   width:75%;
+  }
+}
+
+.parent .head .name {
+  margin: 25px;
+}
+
+.parent .head .name img {
+  width: 100%;
+}
+
+.parent .head .score {
+  margin-right: 25px;
+  height: 80px;
+  width: 100px;
+  background: white;
+  border-radius: 5px;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.parent .head .score h2 {
+  font-size: 20px;
+  font-weight: small;
+}
+
+.parent .head .score p {
+  line-height: 0.6;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.parent .game {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  
+}
+
+.parent .game .clone {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 400px;
+}
+
+.parent .game .clone .play {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .parent .game .clone .play {
+    position: absolute;
+    bottom: 60px;
+  }
+}
+
+.parent .game .clone .play p {
+  color: white;
+  font-size: 40px;
+  margin-bottom: 5px;
+  width: 160px;
+  text-align: center;
+}
+
+.parent .game .clone .play button {
+  margin-top: 10px;
+  font-size: 15px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  background: white;
+  color: #53b553;
+  text-transform: uppercase;
+  height: 45px;
+  width: 170px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-animation: scl 1s cubic-bezier(0.18, 0.89, 0.32, 1.28) both;
+          animation: scl 1s cubic-bezier(0.18, 0.89, 0.32, 1.28) both;
+  cursor: pointer;
+}
+
+@media (max-width: 760px) {
+  .parent .game .clone .select {
+    margin-right: 15px;
+  }
+}
+
+@media (min-width: 761px) {
+  .parent .game .clone .select {
+    margin-right: 60px;
+  }
+}
+
+.parent .game .clone .select::after {
+  content: "your choice";
+  color: white;
+  position: absolute;
+  top: -10%;
+  left: 20%;
+  font-size: 20px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.parent .game .clone .cp-select::after {
+  content: "computer choice";
+  width: 134px;
+  color: white;
+  position: absolute;
+  top: -10%;
+  left: 8%;
+  font-size: 20px;
+}
+
+.parent .game .clone .cp-select {
+  opacity: 0;
+}
+
+@media (max-width: 760px) {
+  .parent .game .clone .cp-select {
+    margin-left: 15px;
+  }
+}
+
+@media (min-width: 761px) {
+  .parent .game .clone .cp-select {
+    margin-left: 60px;
+  }
+}
+
+.parent .game .clone .select, .parent .game .clone .cp-select {
+  position: relative;
+}
+
+.parent .game .clone .select .background, .parent .game .clone .cp-select .background {
+  position: relative;
+  height: 160px;
+  width: 160px;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.parent .game .clone .select .background .icon, .parent .game .clone .cp-select .background .icon {
+  background-color: white;
+  border-radius: 50%;
+  height: 140px;
+  width: 140px;
+  padding-top: 40px;
+  -webkit-box-shadow: inset 1px 5px 7.5px #333;
+          box-shadow: inset 1px 5px 7.5px #333;
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  position: absolute;
+}
+
+.parent .game .clone .select .background.paper, .parent .game .clone .cp-select .background.paper {
+  background: #ec9e0e;
+}
+
+.parent .game .clone .select .background.paper .overlay, .parent .game .clone .cp-select .background.paper .overlay {
+  border: 15px solid #eca922;
+}
+
+.parent .game .clone .select .background.scissors, .parent .game .clone .cp-select .background.scissors {
+  background: #4865f4;
+}
+
+.parent .game .clone .select .background.scissors .overlay, .parent .game .clone .cp-select .background.scissors .overlay {
+  border: 15px solid #5671f5;
+}
+
+.parent .game .clone .select .background.rock, .parent .game .clone .cp-select .background.rock {
+  background: #dc2e4e;
+}
+
+.parent .game .clone .select .background.rock .overlay, .parent .game .clone .cp-select .background.rock .overlay {
+  border: 15px solid #dd405d;
+}
+
+.parent .game .clone .select .background.lizard, .parent .game .clone .cp-select .background.lizard {
+  background: #834fe3;
+}
+
+.parent .game .clone .select .background.lizard .overlay, .parent .game .clone .cp-select .background.lizard .overlay {
+  border: 15px solid #8c5de5;
+}
+
+.parent .game .clone .select .background.spock, .parent .game .clone .cp-select .background.spock {
+  background: #40b9ce;
+}
+
+.parent .game .clone .select .background.spock .overlay, .parent .game .clone .cp-select .background.spock .overlay {
+  border: 15px solid #52bed1;
+}
+
+.parent .game > div {
+  position: relative;
+
+}
+
+.parent .game > div .background {
+  position: absolute;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  text-align: center;
+  cursor: pointer;
+  padding-top: 14.5px;
+  padding-left: 12.5px;
+}
+
+.parent .game > div .background .icon {
+  background-color: white;
+  border-radius: 50%;
+  height: 95px;
+  width: 95px;
+  padding-top: 18px;
+  -webkit-box-shadow: inset 1px 5px 7.5px #333;
+          box-shadow: inset 1px 5px 7.5px #333;
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  position: absolute;
+}
+
+.parent .game > div .background .overlay {
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 15px solid;
+  z-index: 0;
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.parent .game > div .background .icon:hover, .parent .game > div .background .overlay:hover {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.parent .game .easy .background.paper {
+  top: -35px;
+  left: -35px;
+  background: #ec9e0e;
+}
+
+.parent .game .easy .background.paper .overlay {
+  border-color: #eca922;
+}
+
+.parent .game .easy .background.scissors {
+  top: -35px;
+  right: -35px;
+  background: #4865f4;
+}
+
+.parent .game .easy .background.scissors .overlay {
+  border-color: #5671f5;
+}
+
+.parent .game .easy .background.rock {
+  left: calc(50% - 60px);
+  bottom: -25px;
+  background: #dc2e4e;
+}
+
+.parent .game .easy .background.rock .overlay {
+  border-color: #dd405d;
+}
+
+.parent .game .hard {
+  display: none;
+}
+
+.parent .game .hard .background.paper {
+  top: -35px;
+  left: calc(50% - 60px);
+  background: #ec9e0e;
+}
+
+.parent .game .hard .background.paper .overlay {
+  border-color: #eca922;
+}
+
+.parent .game .hard .background.scissors {
+  top: 60px;
+  right: -35px;
+  background: #4865f4;
+}
+
+.parent .game .hard .background.scissors .overlay {
+  border-color: #5671f5;
+}
+
+.parent .game .hard .background.rock {
+  right: 0;
+  bottom: -25px;
+  background: #dc2e4e;
+}
+
+.parent .game .hard .background.rock .overlay {
+  border-color: #dd405d;
+}
+
+.parent .game .hard .background.lizard {
+  bottom: -35px;
+  left: 0;
+  background: #834fe3;
+}
+
+.parent .game .hard .background.lizard .overlay {
+  border-color: #8c5de5;
+}
+
+.parent .game .hard .background.spock {
+  left: -35px;
+  top: 60px;
+  background: #40b9ce;
+}
+
+.parent .game .hard .background.spock .overlay {
+  border-color: #52bed1;
+}
+
+.parent .setting {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 15px;
+  color: white;
+}
+
+@media (max-width: 760px) {
+  .parent .setting {
+    width: 100%;
+  }
+}
+
+@media (min-width: 761px) {
+  .parent .setting {
+    width: 75%;
+  }
+}
+
+.parent .setting div {
+  border: 3px solid #606e85;
+  text-transform: uppercase;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.parent .setting div:hover {
+  border-color: white;
+}
+
+.show-rules.hide {
+  display: none;
+}
+
+.show-rules {
+  position: fixed;
+  height: 100%;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  top: 0;
+  left: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.show-rules .hrd-rl.hide, .show-rules .se-rl.hide {
+  display: none;
+}
+
+.show-rules > div {
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.show-rules > div .display {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 60px;
+  margin-bottom: 40px;
+  text-transform: capitalize;
+}
+
+.show-rules > div .display h3 {
+  font-size: 30px;
+  color: #423b3b;
+}
+
+.show-rules > div .display img {
+  margin-right: 10px;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.show-rules > div .display img:hover {
+  -webkit-transform: rotateZ(-90deg);
+          transform: rotateZ(-90deg);
+}
+
+@-webkit-keyframes scl {
+  0% {
+    -webkit-transform: scale(0.3);
+            transform: scale(0.3);
+  }
+  100% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+
+@keyframes scl {
+  0% {
+    -webkit-transform: scale(0.3);
+            transform: scale(0.3);
+  }
+  100% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+/*# sourceMappingURL=game.css.map */
